@@ -11,6 +11,8 @@
 #include <unordered_map>
 using namespace std;
 
+#include <string>
+
 // WIN
 #include <windows.h>
 #include <assert.h>

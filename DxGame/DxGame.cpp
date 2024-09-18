@@ -32,6 +32,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     Game game;
     game.Init(hWnd);
+
     MSG msg = {};
 
     while (msg.message != WM_QUIT)
