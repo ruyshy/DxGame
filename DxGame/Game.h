@@ -36,15 +36,17 @@ private:
 	ComPtr<ID3D11Device> _device = nullptr;
 	ComPtr<ID3D11DeviceContext> _deviceContext = nullptr;
 	ComPtr<IDXGISwapChain> _swapChain = nullptr;
-
 	ComPtr<ID3D11RenderTargetView> _renderTargetView;
 
 	D3D11_VIEWPORT _viewport = { 0 };
 	float _clearColor[4] = { 0.5f, 0.5f, 0.5f, 0.5f };
 
-private:
 	vector<Vertex> _vertices;
+	vector<uint32> _indices;
+
 	ComPtr<ID3D11Buffer> _vertexBuffer = nullptr;
+	ComPtr<ID3D11Buffer> _indexBuffer = nullptr;
+
 	ComPtr<ID3D11InputLayout> _inputLayout = nullptr;
 
 	ComPtr<ID3D11VertexShader> _vertexShader = nullptr;
