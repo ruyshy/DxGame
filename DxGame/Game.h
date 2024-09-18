@@ -27,6 +27,8 @@ private:
 	void CreatePS();
 	void CreateSRV();
 
+	void CreateConstantBuffer();
+
 	void LoadShaderFromFile(const wstring& path, const string& name, const string& version, ComPtr<ID3DBlob>& blob);
 	
 private:
@@ -44,10 +46,13 @@ private:
 	float _clearColor[4] = { 0.5f, 0.5f, 0.5f, 0.5f };
 
 	vector<Vertex> _vertices;
-	vector<uint32> _indices;
-
 	ComPtr<ID3D11Buffer> _vertexBuffer = nullptr;
+
+	vector<uint32> _indices;
 	ComPtr<ID3D11Buffer> _indexBuffer = nullptr;
+
+	TransformData _transformData;
+	ComPtr<ID3D11Buffer> _contantBuffer = nullptr;
 
 	ComPtr<ID3D11InputLayout> _inputLayout = nullptr;
 
