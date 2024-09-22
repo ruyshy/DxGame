@@ -43,6 +43,9 @@
     <ClInclude Include="Game.h">
       <Filter>01.Main</Filter>
     </ClInclude>
+    <ClInclude Include="SimpleMath.h">
+      <Filter>99.Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DxGame.rc">
@@ -67,10 +70,18 @@
     <ClCompile Include="Game.cpp">
       <Filter>01.Main</Filter>
     </ClCompile>
+    <ClCompile Include="SimpleMath.cpp">
+      <Filter>99.Headers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Default.hlsl">
       <Filter>98.Shader</Filter>
     </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SimpleMath.inl">
+      <Filter>99.Headers</Filter>
+    </None>
   </ItemGroup>
 </Project>

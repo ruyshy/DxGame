@@ -71,5 +71,10 @@ private:
 	ComPtr<ID3DBlob> _psBlob = nullptr;
 
 	ComPtr<ID3D11ShaderResourceView> _shaderResourceView = nullptr;
+
+	Vec3 _localPosition = { 0.f, 0.f, 0.f };
+	Vec3 _localRotate = { 0.f, 0.f, 0.f };
+	Vec3 _localScale = { 1.f, 1.f, 1.f };
+
 };
 

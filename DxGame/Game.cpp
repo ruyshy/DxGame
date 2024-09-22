@@ -35,8 +35,16 @@ void Game::Init(HWND hwnd)
 
 void Game::Update()
 {
-	//_transformData.offset.x += 0.003f;
-	//_transformData.offset.y = 0.3f;
+	
+	Matrix matScale = Matrix::CreateScale(_localScale);
+	Matrix matRotate = Matrix::CreateRotationX(_localRotate.x);
+	matRotate *= Matrix::CreateRotationY(_localRotate.y);
+	matRotate *= Matrix::CreateRotationZ(_localRotate.y);
+	Matrix matTransform = Matrix::CreateTranslation(_localPosition);
+
+	Matrix matWorld = matScale * matRotate * matTransform;
+	_transformData.matWorld = matWorld;
+
 	D3D11_MAPPED_SUBRESOURCE subResource;
 	ZeroMemory(&subResource, sizeof(subResource));
 
@@ -272,7 +280,7 @@ void Game::CreateSamplerState()
 	desc.MaxAnisotropy = 18;
 	desc.MaxLOD = FLT_MAX;
 	desc.MinLOD = FLT_MIN;
-	desc..MipLODBias = 0.0f;
+	desc.MipLODBias = 0.0f;
 
 	_device->CreateSamplerState(&desc, _samplerState.GetAddressOf());
 
